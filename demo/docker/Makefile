@@ -1,0 +1,25 @@
+
+# Variables
+IMAGE_NAME := ghcr.io/efbicief/hello:latest
+CONTAINER_NAME := hello
+
+# Build the Docker image
+build:
+	docker build -t $(IMAGE_NAME) .
+
+# Publish the Docker image
+publish:
+	docker push $(IMAGE_NAME)
+
+# Run the Docker container
+run:
+	docker run -d --name $(CONTAINER_NAME) $(IMAGE_NAME)
+
+# Stop and remove the Docker container
+stop:
+	docker stop $(CONTAINER_NAME)
+	docker rm $(CONTAINER_NAME)
+
+# Clean up the Docker image
+clean:
+	docker rmi $(IMAGE_NAME)

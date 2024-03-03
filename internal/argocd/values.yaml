@@ -1,0 +1,17 @@
+# https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml
+global:
+  domain: argocd.mc.uwcs.co.uk
+
+params:
+  server.insecure: true
+
+server:
+  ingress:
+    enabled: true
+    annotations:
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure,web
+    extraHosts:
+      - name: mc.uwcs.co.uk
+        path: /argocd
+      - name: kube.mc.uwcs.co.uk
+        path: /argocd
