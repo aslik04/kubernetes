@@ -1,4 +1,4 @@
-
+# You can ignore this file - I didn't get this working in time for the workshop :( sorry
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:

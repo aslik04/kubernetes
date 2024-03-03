@@ -1,6 +1,6 @@
 
 # Variables
-IMAGE_NAME := ghcr.io/efbicief/hello:latest
+IMAGE_NAME := ghcr.io/your-github-username-here/hello:latest
 CONTAINER_NAME := hello
 
 # Build the Docker image
@@ -11,9 +11,12 @@ build:
 publish:
 	docker push $(IMAGE_NAME)
 
+login:
+	docker login ghcr.io -u your-github-username-here
+
 # Run the Docker container
 run:
-	docker run -d --name $(CONTAINER_NAME) $(IMAGE_NAME)
+	docker run -d -p '5000:5000' --name $(CONTAINER_NAME) $(IMAGE_NAME)
 
 # Stop and remove the Docker container
 stop:
