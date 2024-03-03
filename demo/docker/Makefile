@@ -12,7 +12,7 @@ publish:
 	docker push $(IMAGE_NAME)
 
 login:
-	docker login ghcr.io -u your-github-username-here
+	docker login ghcr.io -u aslik04
 
 # Run the Docker container
 run:
